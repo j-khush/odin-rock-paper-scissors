@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function computerPlay() {
+            randomNumber = Math.floor(Math.random()*3);
+
+            switch(randomNumber){
+                case 0:
+                    return "ROCK";
+
+                case 1:
+                    return "PAPER";
+
+                case 2:
+                    return "SCISSORS";
+            }
+            
+        }
+
+        let playerScore=0, compScore=0;
+
+        while (playerScore<5 && compScore<5)
+        { 
+            let playerSelection = prompt("Select one:");
+            let compSelection = computerPlay();
+
+            if (playerSelection == 'ROCK')
+            {
+                if (compSelection == 'PAPER')
+                {
+                    compScore++;
+                    alert("You Lose! Paper beats Rock" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+                else if (compSelection == 'SCISSORS') 
+                {
+                    playerScore++;
+                    alert("You Won! Rock beats Scissors" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+                else
+                {
+                    alert("Tie!" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+            }
+
+            if (playerSelection == 'PAPER')
+            {
+                if (compSelection == 'SCISSORS') 
+                {
+                    compScore++;
+                    alert("You Lose! Scissors beat Paper" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+                else if (compSelection == 'ROCK') 
+                {
+                    playerScore++;
+                    alert("You Won! Paper beats Rock" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+                else
+                {
+                    alert("Tie!" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+            }
+
+            if (playerSelection == 'SCISSORS')
+            {
+                if (compSelection == 'ROCK')
+                {
+                    compScore++;
+                    alert("You Lose! Rock beats Scissors" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+                else if (compSelection == 'PAPER') 
+                {
+                    playerScore++;
+                    alert("You Won! Scissors beat Paper" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+                else
+                {
+                    alert("Tie!" + "\n" + "Player Score: "+playerScore + "\n" + "Computer Score:"+compScore);
+                }
+            }
+        }
+
+        if (compScore==5)
+        {
+            alert("You Lose the Game!");
+        }
+
+        else
+        {
+            alert("You Won the Game!");
+        }
+
+    </script>
+</body>
+</html>
